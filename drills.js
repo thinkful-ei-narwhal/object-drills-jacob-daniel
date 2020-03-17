@@ -22,8 +22,19 @@ const fiveProperties = {
   fum: 3,
   quux: 4,
   spam: 5
-}
+};
 
 for (const key in fiveProperties) {
   console.log(`${key} ${fiveProperties[key]}`);
 }
+
+// 3
+
+const foods = {
+  meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper']
+};
+
+console.log(foods.meals[3]);
+
+// 4
+
