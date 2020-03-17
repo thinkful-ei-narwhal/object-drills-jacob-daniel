@@ -36,28 +36,39 @@ const foods = {
 
 console.log(foods.meals[3]);
 
-// 4
+// 4 & 5
 
 const newArray = [
-{
-  name: 'John',
-  jobTitle: 'Manufacturer'
-},
+  {
+    name: 'Beethoven',
+    jobTitle: 'Boss'
+  },
+  
+  {
+    name: 'John',
+    jobTitle: 'Manufacturer',
+    boss: 'Beethoven'
+  },
 
-{
-  name: 'Linda',
-  jobTitle: 'Painter'
-},
+  {
+    name: 'Linda',
+    jobTitle: 'Painter',
+    boss: 'Beethoven'
+  },
 
-{
-  name: 'Mike',
-  jobTitle: 'Salesman'
-}
+  {
+    name: 'Mike',
+    jobTitle: 'Salesman',
+    boss: 'Beethoven'
+  }
 ];
 
 for (let i = 0; i < newArray.length; i++) {
   const object = newArray[i];
-  console.log(`${object.jobTitle}: ${object.name}`)
+  if (!('boss' in object)) {
+    console.log(`${object.jobTitle} ${object.name} doesn't report to anybody.`);
+  } else {
+    console.log(`${object.jobTitle} ${object.name} reports to ${object.boss}`);
+  }
 }
-
 
