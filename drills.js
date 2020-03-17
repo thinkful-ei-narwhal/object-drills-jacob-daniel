@@ -38,3 +38,26 @@ console.log(foods.meals[3]);
 
 // 4
 
+const newArray = [
+{
+  name: 'John',
+  jobTitle: 'Manufacturer'
+},
+
+{
+  name: 'Linda',
+  jobTitle: 'Painter'
+},
+
+{
+  name: 'Mike',
+  jobTitle: 'Salesman'
+}
+];
+
+for (let i = 0; i < newArray.length; i++) {
+  const object = newArray[i];
+  console.log(`${object.jobTitle}: ${object.name}`)
+}
+
+
