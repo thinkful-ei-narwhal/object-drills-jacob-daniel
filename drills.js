@@ -15,3 +15,15 @@ console.log(`Flour: ${loaf.flour}, Water: ${loaf.water}`);
 console.log(loaf.hydration());
 
 // 2
+
+const fiveProperties = {
+  foo: 1,
+  bar: 2,
+  fum: 3,
+  quux: 4,
+  spam: 5
+}
+
+for (const key in fiveProperties) {
+  console.log(`${key} ${fiveProperties[key]}`);
+}
