@@ -74,26 +74,33 @@ for (let i = 0; i < newArray.length; i++) {
 
 // 6
 
-function decode(codedSentence) {
+
+function decodeWords(codedSentence) {
   const wordArray = codedSentence.split(' ');
   let decodedMessage = '';
   for (let i = 0; i < wordArray.length; i++) {
-
-    if (wordArray[i][0] === 'a') {
-      decodedMessage += wordArray[i][1];
-    }
-    else if (wordArray[i][0] === 'b') {
-      decodedMessage += wordArray[i][2];
-    }
-    else if (wordArray[i][0] === 'c') {
-      decodedMessage += wordArray[i][3];
-    }
-    else if (wordArray[i][0] === 'd') {
-      decodedMessage += wordArray[i][4];
-    }
-    else {
-      decodedMessage += ' ';
-    }
+    decodedMessage += decode(wordArray[i]);
   }
   return decodedMessage;
 }
+
+function decode(word) {
+  const cipher = {
+    a: 2,
+    b: 3,
+    c: 4,
+    d: 5
+  };
+
+  for (const key in cipher) {
+    if (key === word[0]) {
+      return word[(cipher[key]) - 1];
+    } 
+  }
+  return ' ';
+}
+
+console.log(decodeWords('craft block argon meter bells brown croon droop'));
+
+// 7
+
